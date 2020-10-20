@@ -43,7 +43,7 @@ class Command(BaseCommand):
             existing_key = open(key_filepath).read().strip()
             # Key not empty ?
             if existing_key and not options['replace']:
-                self.stderr.write("There is already a secret key in `{}`".format(key_filename))
+                self.stderr.write("There is already a secret key in `{}`".format(options['filename']))
                 return
         except IOError:
             # No key found
